@@ -158,7 +158,6 @@ export default function Home() {
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 40vw"
-                  priority
                 />
               </div>
             </div>
@@ -271,7 +270,6 @@ export default function Home() {
                         alt={`${project.title} preview`}
                         className="h-full w-full rounded-xl border border-[color:var(--border)] object-cover"
                         sizes="(max-width: 1024px) 100vw, 40vw"
-                        priority={index === 0}
                       />
                     ) : (
                       <div className="h-full w-full rounded-xl border border-[color:var(--border)] bg-[#0e0f13] p-6 text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">

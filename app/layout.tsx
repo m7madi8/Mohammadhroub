@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import InitialLoader from "./components/InitialLoader";
+import UnderDevelopmentGate from "./components/UnderDevelopmentGate";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space",
@@ -27,11 +29,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${spaceGrotesk.variable} ${plexMono.variable} antialiased`}
       >
-        {children}
+        <InitialLoader />
+        <UnderDevelopmentGate>{children}</UnderDevelopmentGate>
       </body>
     </html>
   );

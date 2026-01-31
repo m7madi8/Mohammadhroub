@@ -7,10 +7,10 @@ export default function Loader() {
       aria-live="polite"
       aria-label="Loading"
     >
-      {/* Top progress bar */}
-      <div className="absolute left-0 top-0 h-0.5 w-full overflow-hidden bg-[color:var(--border)]">
+      {/* Top brand bar */}
+      <div className="absolute left-0 top-0 h-[2px] w-full overflow-hidden bg-[color:var(--border)]">
         <div
-          className="loader-progress h-full bg-[color:var(--accent)]"
+          className="brand-loader-bar h-full bg-[color:var(--accent)]"
           role="progressbar"
           aria-valuemin={0}
           aria-valuemax={100}
@@ -18,23 +18,20 @@ export default function Loader() {
         />
       </div>
 
-      {/* Centered content */}
-      <div className="flex flex-col items-center gap-8">
-        <p className="eyebrow text-[color:var(--muted)]">Loading</p>
-        <div className="flex items-center gap-1.5">
+      {/* Centered brand mark */}
+      <div className="flex flex-col items-center gap-10">
+        <div className="flex items-baseline gap-0.5">
+          <span className="brand-loader-wordmark eyebrow text-[color:var(--foreground)]">
+            Mohammad
+          </span>
           <span
-            className="h-1.5 w-1.5 rounded-full bg-[color:var(--accent)] loader-dot"
-            style={{ animationDelay: "0ms" }}
-          />
-          <span
-            className="h-1.5 w-1.5 rounded-full bg-[color:var(--accent)] loader-dot"
-            style={{ animationDelay: "160ms" }}
-          />
-          <span
-            className="h-1.5 w-1.5 rounded-full bg-[color:var(--accent)] loader-dot"
-            style={{ animationDelay: "320ms" }}
-          />
+            className="brand-loader-cursor text-[color:var(--accent)]"
+            aria-hidden="true"
+          >
+            _
+          </span>
         </div>
+        <div className="brand-loader-underline h-px w-24 bg-[color:var(--accent)]" />
       </div>
     </div>
   );

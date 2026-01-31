@@ -4,12 +4,17 @@ import CustomCursor from "../../components/CustomCursor";
 import RevealManager from "../../components/RevealManager";
 import { projects } from "../../data/projects";
 
+export function generateStaticParams() {
+  return projects.map((p) => ({ slug: p.slug }));
+}
+
 type ProjectPageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projects.find((item) => item.slug === params.slug);
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const project = projects.find((item) => item.slug === slug);
 
   if (!project) {
     notFound();

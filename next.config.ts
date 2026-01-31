@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
+const repo = process.env.GITHUB_REPOSITORY;
+const isGitHubPages =
+  repo && !repo.endsWith(".github.io");
+const basePath = isGitHubPages ? `/${repo.split("/")[1]}` : "";
+const assetPrefix = basePath ? `${basePath}/` : "";
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+  basePath,
+  assetPrefix: assetPrefix || undefined,
 };
 
 export default nextConfig;

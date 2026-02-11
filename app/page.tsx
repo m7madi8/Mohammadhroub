@@ -1,334 +1,393 @@
 import Image from "next/image";
 import profileImage from "../img/me.png";
+import logo99 from "../img/99logo2.png";
+import logoSamar from "../img/samar-logo.png";
+import logoWolve from "../img/wolve_store.png";
+import logoChuckeese from "../img/chuckeese-logo.png";
+import logoMarkiz from "../img/markiz-logo.png";
+import logoRawan from "../img/rawan-logo.png";
+import logoLayali from "../img/layali-logo.png";
+import logoNana from "../img/nana's-logo.webp";
 import CustomCursor from "./components/CustomCursor";
+import Header from "./components/Header";
 import RevealManager from "./components/RevealManager";
 import { projects } from "./data/projects";
 
 export default function Home() {
-  const systems = [
+  const services = [
     {
-      title: "Corporate Websites",
+      title: "Web design",
       copy:
-        "Clean, modern sites that communicate trust and make content easy to manage.",
+        "Clean, modern interfaces that communicate your brand and convert visitors into customers.",
+      href: "#work",
     },
     {
-      title: "E-Commerce Stores",
+      title: "Branding",
       copy:
-        "Fast, reliable storefronts built to convert and stay easy to operate.",
+        "Visual identity and design systems that stand out and stay consistent across every touchpoint.",
+      href: "#work",
     },
     {
-      title: "Landing Pages",
+      title: "3D Modeling",
       copy:
-        "Focused pages that guide decisions with clear structure and strong UX.",
+        "Photorealistic renders and 3D experiences that bring products and spaces to life.",
+      href: "#work",
     },
-    {
-      title: "Full-Stack Delivery",
-      copy:
-        "From UI to backend logic, built with clarity and long-term reliability.",
-    },
+  ];
+
+  const processSteps = [
+    { step: "01", title: "Discovery", copy: "We align on goals, audience, and success metrics." },
+    { step: "02", title: "Strategy", copy: "Structure, content, and technical approach." },
+    { step: "03", title: "Design", copy: "Visual direction and high-fidelity interfaces." },
+    { step: "04", title: "Development", copy: "Build, test, and launch with quality in mind." },
   ];
 
   const portfolioProjects = projects;
 
-  const mindset = [
-    "Modern front-end with a focus on clean UI and accessible layouts.",
-    "Back-end logic that stays simple, clear, and reliable.",
-    "Performance checks built into the workflow, not added later.",
-    "Responsive behavior tested across devices and real content.",
-    "CMS-ready builds when teams need to update content fast.",
-    "Project delivery that stays practical and on scope.",
+  const brandLogos: { type: "image"; src: typeof logo99; alt: string }[] = [
+    { type: "image", src: logo99, alt: "99" },
+    { type: "image", src: logoSamar, alt: "Samar" },
+    { type: "image", src: logoWolve, alt: "Wolve Store" },
+    { type: "image", src: logoChuckeese, alt: "Chuckeese" },
+    { type: "image", src: logoMarkiz, alt: "Markiz" },
+    { type: "image", src: logoRawan, alt: "Rawan" },
+    { type: "image", src: logoLayali, alt: "Layali" },
+    { type: "image", src: logoNana, alt: "Nana's" },
   ];
 
   return (
     <div className="bg-[color:var(--background)] text-[color:var(--foreground)]">
       <CustomCursor />
       <RevealManager />
-      <main className="relative mx-auto min-h-screen max-w-6xl px-6 pb-28 pt-12 sm:px-10 lg:px-16">
-        <header className="flex items-start justify-between text-sm">
-          <div className="space-y-2">
-            <p className="eyebrow">Mohammad</p>
-            <p className="text-xs text-[color:var(--muted)]">
-              Full-Stack Web Developer • Freelancer.
-            </p>
-          </div>
-          <nav className="hidden gap-6 text-xs text-[color:var(--muted)] md:flex">
-            <a className="transition-colors hover:text-white" href="#identity">
-              About
-            </a>
-            <a className="transition-colors hover:text-white" href="#build">
-              Services
-            </a>
-            <a className="transition-colors hover:text-white" href="#work">
-              Work
-            </a>
-            <a className="transition-colors hover:text-white" href="#mindset">
-              Skills
-            </a>
-            <a className="transition-colors hover:text-white" href="#presence">
-              Presence
-            </a>
-          </nav>
-        </header>
+      <main className="relative mx-auto min-h-screen max-w-7xl px-6 pb-32 pt-8 sm:px-10 lg:px-16">
+        <Header />
 
-        <section
-          id="hero"
-          className="mt-24 grid gap-12 md:grid-cols-[1.3fr_0.7fr]"
-        >
-          <div className="space-y-10">
-            <p className="eyebrow">Entry</p>
-            <h1 className="text-balance text-4xl font-medium leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              Modern web development for businesses that value quality
-              <span className="inline-block animate-[blink_1.4s_ease-in-out_infinite] text-[color:var(--accent)]">
-                _
-              </span>
+        {/* Hero – على الشاشات الكبيرة يملأ الصفحة فلا تظهر اللوجوهات حتى التمرير */}
+        <section className="relative mt-6 flex min-h-[75vh] flex-col items-center justify-center text-center md:mt-10 md:min-h-[80vh] lg:mt-8 lg:min-h-screen">
+          <div className="relative max-w-3xl lg:-mt-10">
+            <div className="hero-pill reveal" data-reveal>
+              <span className="hero-pill-dot" aria-hidden />
+              Crafting Unique Brand Identities
+            </div>
+            <h1 className="hero-title reveal text-4xl font-semibold leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl" data-reveal>
+              Branding that you need Indeed.
             </h1>
-            <p className="max-w-xl text-lg leading-relaxed text-[color:var(--muted)]">
-              Websites and stores that are clean, fast, and reliable. Built for
-              real business goals without unnecessary complexity.
+            <p className="reveal mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[color:var(--muted)]" data-reveal>
+              Elevate your brand with custom identity and package design. Showcase your story through bold visuals and strategic design solutions.
             </p>
-            <a
-              href="#identity"
-              className="inline-flex items-center gap-4 rounded-full border border-[color:var(--border)] px-6 py-3 text-sm uppercase tracking-[0.3em] transition duration-300 hover:border-[color:var(--accent)]"
-              data-cursor
-            >
-              Enter
-              <span className="text-[color:var(--accent)]">→</span>
-            </a>
-          </div>
-          <div className="flex flex-col justify-between gap-8 text-sm text-[color:var(--muted)]">
-            <div className="hero-tilt">
-              <div className="hero-tilt-card space-y-4 rounded-2xl border border-[color:var(--border)] bg-[#0f1012] p-6">
-                <p className="eyebrow">Status</p>
-                <p className="text-base text-white">
-                  Available for new freelance projects.
-                </p>
-                <p>Focused on clear, modern, and dependable builds.</p>
+            {/* الأزرار وعنصر التمرير – حاوية واحدة للتوسيط والمسافة المتماثلة */}
+            <div className="mt-10 flex w-full flex-col items-center">
+              <div className="reveal flex w-full flex-wrap items-center justify-center gap-4 px-3 sm:px-0" data-reveal>
+                <a href="#contact" className="hero-btn md:-ml-14" data-cursor>
+                  Get Started Now
+                </a>
+                <a href="#work" className="hero-btn" data-cursor>
+                  See Projects
+                </a>
               </div>
-            </div>
-            <div className="space-y-4">
-              <p className="eyebrow">Focus</p>
-              <div className="space-y-2 text-xs uppercase tracking-[0.28em]">
-                <p>Performance</p>
-                <p>Reliability</p>
-                <p>Clarity</p>
-              </div>
+              <a
+                href="#work"
+                className="scroll-hint reveal mt-8 hidden items-center justify-center gap-4 text-[color:var(--muted)] no-underline transition-opacity hover:opacity-90 lg:flex"
+                data-reveal
+                aria-label="Scroll down to see projects"
+              >
+                <span className="shrink-0 text-sm font-medium">Scroll down</span>
+                <span className="scroll-hint-line h-px w-16 shrink-0 bg-[color:var(--border)]" />
+                <span className="scroll-hint-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[color:var(--button-border)] text-white">
+                  <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden>
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                  </svg>
+                </span>
+                <span className="scroll-hint-line h-px w-16 shrink-0 bg-[color:var(--border)]" />
+                <span className="shrink-0 text-sm font-medium">to see projects</span>
+              </a>
             </div>
           </div>
         </section>
 
-        <div className="mt-20 glow-divider" />
-
-        <section id="identity" className="mt-24 space-y-12">
-          <div className="reveal" data-reveal>
-            <p className="eyebrow">About</p>
-            <h2 className="section-title mt-6 text-3xl">
-              Clean work, clear results.
-            </h2>
-          </div>
-          <div className="grid gap-12 md:grid-cols-[1.2fr_0.8fr]">
-            <div
-              className="reveal space-y-6 text-lg leading-relaxed text-[color:var(--muted)]"
-              data-reveal
-            >
-              <p>
-                I’m Mohammad, a freelance full-stack developer. I build websites
-                that look modern, load fast, and stay reliable. The process is
-                direct: clear goals, clean structure, and careful execution.
-              </p>
-              <p>
-                You get a site that reflects your business, works on every
-                device, and stays easy to maintain as you grow.
-              </p>
-            </div>
-            <div
-              className="reveal flex flex-col justify-between rounded-2xl border border-[color:var(--border)] bg-[#0f1012] p-8"
-              data-reveal
-            >
-              <p className="eyebrow">Principle</p>
-
-              <p className="text-xl leading-relaxed text-white">
-                Clarity builds trust.
-              </p>
-
-              {/* Image Wrapper */}
-              <div className="relative mt-8 min-h-0 w-full aspect-[4/5] max-h-[70vh] overflow-hidden rounded-2xl border border-[color:var(--border)] md:max-h-none">
+        {/* شريط لوجوهات علامات تجارية وهمية متحركة – أسفل الهيرو */}
+        <section className="logos-marquee -mx-6 mt-4 overflow-hidden py-4 sm:-mx-10 lg:-mx-16" aria-hidden>
+          <div className="logos-marquee-inner flex w-max items-center gap-12 px-6 sm:gap-16 sm:px-10 lg:gap-20 lg:px-16">
+            {[...brandLogos, ...brandLogos].map((item, i) => (
+              <span key={`img-${i}`} className="logos-marquee-item relative h-8 w-auto shrink-0 sm:h-10">
                 <Image
-                  src={profileImage}
-                  alt="Mohammad portrait"
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 40vw"
+                  src={item.src}
+                  alt={item.alt}
+                  width={120}
+                  height={40}
+                  className="h-full w-auto object-contain opacity-80"
                 />
-              </div>
-            </div>
-
+              </span>
+            ))}
           </div>
         </section>
 
-        <div className="mt-20 glow-divider" />
-
-        <section id="build" className="mt-24 space-y-12">
-          <div className="reveal" data-reveal>
-            <p className="eyebrow">Services</p>
-            <h2 className="section-title mt-6 text-3xl">
-              What I do.
-            </h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {systems.map((system) => (
+        {/* Project showcase – 3D cards */}
+        <section className="mt-28" aria-label="Featured projects">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {portfolioProjects.slice(0, 3).map((project, index) => (
               <div
-                key={system.title}
-                className="reveal group rounded-2xl border border-[color:var(--border)] bg-[#0f1012] p-7 transition duration-300 hover:border-[color:var(--accent)]"
+                key={project.slug}
+                className="perspective-3d reveal group"
                 data-reveal
               >
-                <p className="text-lg font-medium text-white">
-                  {system.title}
+                <div className="card-3d rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-elevated)] overflow-hidden">
+                  <a href={`#work`} className="block">
+                    <div className={`image-3d-wrap aspect-[4/3] relative p-4 ${index === 0 ? "bg-[color:var(--surface)]" : ""}`}>
+                      {project.image ? (
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className={index === 0 ? "object-contain" : "object-cover"}
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 bg-[color:var(--surface)] flex items-center justify-center text-[color:var(--muted)] text-sm uppercase tracking-widest">
+                          {project.title}
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-5">
+                      <p className="eyebrow">Project 0{index + 1}</p>
+                      <h3 className="mt-2 text-lg font-medium text-white">
+                        {project.title}
+                      </h3>
+                      <p className="mt-1 text-sm text-[color:var(--muted)]">
+                        {project.context}
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Services – Craft exceptional experiences */}
+        <section id="about" className="mt-32 space-y-16">
+          <div className="reveal max-w-2xl" data-reveal>
+            <h2 className="section-title text-3xl font-medium tracking-tight sm:text-4xl">
+              Craft exceptional experiences that captivate.
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-[color:var(--muted)]">
+              From web design and branding to 3D visualization, we bring clarity and impact to every project.
+            </p>
+          </div>
+          <div className="grid gap-10 md:grid-cols-3">
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="reveal group rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 transition hover:border-[color:var(--accent)]"
+                data-reveal
+              >
+                <h3 className="text-xl font-medium text-white">
+                  {service.title}
+                </h3>
+                <p className="mt-4 text-[color:var(--muted)] leading-relaxed">
+                  {service.copy}
                 </p>
+                <a
+                  href={service.href}
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[color:var(--accent)] transition hover:opacity-80"
+                  data-cursor
+                >
+                  Learn more
+                  <span aria-hidden>→</span>
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Second project row – 3D feel */}
+        <section className="mt-32" aria-label="More work">
+          <div className="grid gap-6 sm:grid-cols-2">
+            <div className="reveal perspective-3d" data-reveal>
+              <div className="card-3d rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-elevated)] overflow-hidden">
+                <div className="image-3d-wrap aspect-[5/4] relative">
+                  <Image
+                    src={profileImage}
+                    alt="Portrait"
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="eyebrow">About</p>
+                  <p className="mt-2 text-white">
+                    Clean work, clear results. Focused on performance and clarity.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="reveal perspective-3d" data-reveal>
+              <div className="card-3d rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-elevated)] overflow-hidden">
+                <div className="image-3d-wrap aspect-[5/4] relative bg-[color:var(--surface)]">
+                  {portfolioProjects[0]?.image && (
+                    <Image
+                      src={portfolioProjects[0].image}
+                      alt={portfolioProjects[0].title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                    />
+                  )}
+                </div>
+                <div className="p-6">
+                  <p className="eyebrow">Selected</p>
+                  <p className="mt-2 text-white">
+                    {portfolioProjects[0]?.title} — {portfolioProjects[0]?.context}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA – Let's build your next big thing */}
+        <section className="mt-32 text-center">
+          <div className="reveal rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] px-8 py-20 sm:px-16" data-reveal>
+            <h2 className="text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
+              Let&apos;s build your next big thing.
+            </h2>
+            <p className="mx-auto mt-6 max-w-lg text-[color:var(--muted)]">
+              From idea to launch — we keep the process clear and the quality high.
+            </p>
+            <a
+              href="#contact"
+              className="btn-primary mt-10 px-8 py-4"
+              data-cursor
+            >
+              Contact Us
+            </a>
+          </div>
+        </section>
+
+        {/* Process */}
+        <section className="mt-32">
+          <div className="reveal" data-reveal>
+            <p className="eyebrow">How we work</p>
+            <h2 className="section-title mt-4 text-3xl font-medium sm:text-4xl">
+              Our process
+            </h2>
+          </div>
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {processSteps.map((item) => (
+              <div
+                key={item.step}
+                className="reveal rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8"
+                data-reveal
+              >
+                <span className="eyebrow">{item.step}</span>
+                <h3 className="mt-4 text-xl font-medium text-white">
+                  {item.title}
+                </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted)]">
-                  <span className="text-[color:var(--accent)]">—</span>{" "}
-                  {system.copy}
+                  {item.copy}
                 </p>
               </div>
             ))}
           </div>
         </section>
 
-        <div className="mt-20 glow-divider" />
-
-        <section id="work" className="mt-24 space-y-12">
+        {/* Our Work – detailed projects */}
+        <section id="work" className="mt-32 space-y-12">
           <div className="reveal" data-reveal>
             <p className="eyebrow">Selected Work</p>
-            <h2 className="section-title mt-6 text-3xl">
+            <h2 className="section-title mt-4 text-3xl font-medium sm:text-4xl">
               Real projects, real results.
             </h2>
           </div>
-          <div className="space-y-8">
+          <div className="space-y-12">
             {portfolioProjects.map((project, index) => (
-              <details
-                key={project.title}
-                className="case-details reveal rounded-2xl p-6 sm:p-8"
+              <article
+                key={project.slug}
+                className="reveal grid gap-10 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-10"
                 data-reveal
-                open={index === 0}
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-6">
+                <div className="space-y-6">
                   <div>
-                    <p className="eyebrow">Case File 0{index + 1}</p>
-                    <h3 className="mt-4 text-2xl text-white">
+                    <p className="eyebrow">Case 0{index + 1}</p>
+                    <h3 className="mt-3 text-2xl font-medium text-white">
                       {project.title}
                     </h3>
-                    <p className="mt-3 text-base text-white/80">
+                    <p className="mt-2 text-[color:var(--muted)]">
                       {project.summary}
                     </p>
-                    <p className="mt-2 text-sm text-[color:var(--muted)]">
+                    <p className="text-sm text-[color:var(--muted)]">
                       {project.context}
                     </p>
                   </div>
-                  <span className="case-indicator text-xl">›</span>
-                </summary>
-                <div className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-                  <div className="space-y-5 text-sm text-[color:var(--muted)]">
+                  <div className="space-y-4 text-sm">
                     <div>
                       <p className="eyebrow">Goal</p>
-                      <p className="mt-2 text-base text-white">
-                        {project.goal}
-                      </p>
+                      <p className="mt-1 text-white">{project.goal}</p>
                     </div>
                     <div>
-                      <p className="eyebrow">What was built</p>
-                      <p className="mt-2">{project.build}</p>
-                    </div>
-                    <div>
-                      <p className="eyebrow">Key work</p>
-                      <ul className="mt-3 space-y-2">
-                        {project.work.map((item) => (
-                          <li key={item}>— {item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="text-base text-white">
-                      <span className="eyebrow">Result</span>
-                      <p className="mt-2">{project.result}</p>
-                    </div>
-                    <div className="flex flex-wrap items-center gap-6">
-                      {project.url ? (
-                        <a
-                          className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] transition hover:text-white"
-                          href={project.url}
-                          target="_blank"
-                          rel="noreferrer"
-                          data-cursor
-                        >
-                          Visit site
-                        </a>
-                      ) : null}
+                      <p className="eyebrow">Result</p>
+                      <p className="mt-1 text-white">{project.result}</p>
                     </div>
                   </div>
-                  <div className="relative flex items-center justify-center rounded-2xl border border-[color:var(--border)] bg-[#14161b] p-6">
-                    {project.image ? (
-                      <Image
-                        src={project.image}
-                        alt={`${project.title} preview`}
-                        className="h-full w-full rounded-xl border border-[color:var(--border)] object-cover"
-                        sizes="(max-width: 1024px) 100vw, 40vw"
-                      />
-                    ) : (
-                      <div className="h-full w-full rounded-xl border border-[color:var(--border)] bg-[#0e0f13] p-6 text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
-                        Project View
-                        <div className="mt-4 h-[60%] rounded-lg border border-[color:var(--border)] bg-[#111318]" />
-                      </div>
-                    )}
+                  {project.url && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-[color:var(--accent)] transition hover:opacity-80"
+                      data-cursor
+                    >
+                      Visit site
+                      <span aria-hidden>→</span>
+                    </a>
+                  )}
+                </div>
+                <div className="perspective-3d">
+                  <div className="card-3d overflow-hidden rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-elevated)]">
+                    <div className="image-3d-wrap aspect-video relative">
+                      {project.image ? (
+                        <Image
+                          src={project.image}
+                          alt={`${project.title} preview`}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 1024px) 100vw, 45vw"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center text-[color:var(--muted)] text-xs uppercase tracking-widest">
+                          {project.title}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </details>
+              </article>
             ))}
           </div>
         </section>
 
-        <div className="mt-20 glow-divider" />
-
-        <section id="mindset" className="mt-24 space-y-12">
-          <div className="reveal" data-reveal>
-            <p className="eyebrow">Skills</p>
-            <h2 className="section-title mt-6 text-3xl">
-              What I use for client work.
-            </h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {mindset.map((note) => (
-              <div
-                key={note}
-                className="reveal rounded-2xl border border-[color:var(--border)] bg-[#0f1012] p-6 text-sm text-[color:var(--muted)]"
-                data-reveal
-              >
-                {note}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <div className="mt-20 glow-divider" />
-
-        <section id="presence" className="mt-24 space-y-10">
+        {/* Contact */}
+        <section id="contact" className="mt-32 space-y-10">
           <div className="reveal" data-reveal>
             <p className="eyebrow">Contact</p>
-            <h2 className="section-title mt-6 text-3xl">
+            <h2 className="section-title mt-4 text-3xl font-medium sm:text-4xl">
               Available for new projects.
             </h2>
           </div>
           <div className="reveal max-w-2xl text-lg leading-relaxed text-[color:var(--muted)]" data-reveal>
-            Let’s build something clean and effective. I take on a limited
-            number of projects to keep quality high.
+            Let&apos;s build something clean and effective. I take on a limited number of projects to keep quality high.
           </div>
-          <div className="reveal flex flex-wrap gap-6 text-sm uppercase tracking-[0.3em]" data-reveal>
+          <div className="reveal flex flex-wrap gap-4 text-sm uppercase tracking-[0.2em]" data-reveal>
             <a
-              className="rounded-full border border-[color:var(--border)] px-6 py-3 transition hover:border-[color:var(--accent)]"
-              href="mailto:hello@studio.systems"
+              className="btn-primary px-6 py-3"
+              href="mailto:hello@example.com"
               data-cursor
             >
               Email
             </a>
             <a
-              className="rounded-full border border-[color:var(--border)] px-6 py-3 transition hover:border-[color:var(--accent)]"
+              className="btn-primary px-6 py-3"
               href="https://github.com/"
               target="_blank"
               rel="noreferrer"
@@ -337,7 +396,7 @@ export default function Home() {
               GitHub
             </a>
             <a
-              className="rounded-full border border-[color:var(--border)] px-6 py-3 transition hover:border-[color:var(--accent)]"
+              className="btn-primary px-6 py-3"
               href="https://www.linkedin.com/"
               target="_blank"
               rel="noreferrer"
@@ -347,6 +406,11 @@ export default function Home() {
             </a>
           </div>
         </section>
+
+        {/* Footer */}
+        <footer className="mt-32 border-t border-[color:var(--border)] pt-10 text-center text-xs text-[color:var(--muted)]">
+          <p>© {new Date().getFullYear()} Mohammad. All rights reserved.</p>
+        </footer>
       </main>
     </div>
   );

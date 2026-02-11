@@ -1,5 +1,6 @@
 import type { StaticImageData } from "next/image";
-import cafeImage from "../../img/99cafe.png";
+import image99 from "../../img/99.png";
+import imageSamarammar from "../../img/samarammar.png";
 
 export type Project = {
   slug: string;
@@ -21,7 +22,7 @@ export const projects: Project[] = [
     title: "99cafe",
     context: "Cafe brand website",
     summary: "Modern cafe website with a clean menu flow.",
-    image: cafeImage,
+    image: image99,
     url: "https://99cafe.com",
     goal: "Present the brand clearly and highlight the menu.",
     build: "A clean, responsive site with focused sections.",
@@ -30,20 +31,19 @@ export const projects: Project[] = [
     overview: "Clean branding, fast pages, and an easy menu experience.",
   },
   {
-    slug: "marble-store",
-    title: "Marble Store",
-    context: "E-commerce experience",
-    summary: "A simple, fast store with an improved buying flow.",
-    goal: "Help customers find products and finish checkout smoothly.",
-    build: "A streamlined store with clear navigation and confident product pages.",
+    slug: "interior-landscape-elegance",
+    title: "Interior & Landscape Elegance",
+    context: "Interior, exterior & garden design",
+    summary: "Showcasing refined interior, exterior, and garden designs.",
+    image: imageSamarammar,
+    goal: "Present refined interior, exterior, and garden design work.",
+    build: "A portfolio showcasing elegant spaces and landscapes.",
     work: [
-      "Simplified categories and filtering for faster browsing.",
-      "Improved product details to build trust.",
-      "Tuned the layout for mobile shopping.",
+      "Interior and exterior design showcases.",
+      "Garden and landscape visualizations.",
     ],
-    result: "Higher add-to-cart rate and fewer support questions.",
-    overview:
-      "A commerce flow designed for clarity, speed, and decision-making.",
+    result: "A clear, refined presentation of design projects.",
+    overview: "Refined interior, exterior, and garden design portfolio.",
   },
   {
     slug: "signal-launch",
